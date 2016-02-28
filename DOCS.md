@@ -22,4 +22,12 @@ publish:
     source: files/to/archive
     target: /target/location
     recursive: true
+    when:
+      repo: drone-plugins/drone-s3
 ```
+
+## Notes
+
+It is recommended that you use the drone `when` condition on this plugin so it
+does not attempt to execute on other builds that may mistakenly copy the
+configuration.
